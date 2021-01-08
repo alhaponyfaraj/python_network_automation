@@ -1,0 +1,6 @@
+[
+{"sw1_username": "cisco",
+"sw1_password": "cisco"},
+{"username": "admin",
+"password": ""}
+]
