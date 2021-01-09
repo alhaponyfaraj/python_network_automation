@@ -1,6 +1,6 @@
 import connection as conn
 import cpu_utilizer
-#import packet_sniffer
+import packet_sniffer
 import reachability_check
 
 def start():
@@ -11,7 +11,7 @@ def start():
         1. Test Reachability . 
         _____________________________________________________
 
-        2. Function B .
+        2. CPU utilization.
         _____________________________________________________
 
         3. Exit .
@@ -30,6 +30,9 @@ def start():
                     print("The host: " + ipaddress +" is up.")
                 else:
                     print("Can not reach the host: " + ipaddress)
+
+        elif choice == "3":
+            packet_sniffer.sniff(prn=packet_sniffer.arp_display, filter="arp", store=0, count=10)
         else:
             print("Please type a valid option")
 
