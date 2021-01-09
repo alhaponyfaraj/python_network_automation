@@ -1,6 +1,5 @@
 #! /usr/bin/env python3
 
-from collections import Counter
 from scapy.all import ARP, sniff
 
 def arp_display(pkt):

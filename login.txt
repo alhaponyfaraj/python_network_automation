@@ -1,6 +1,8 @@
 [
 {"sw1_username": "cisco",
 "sw1_password": "cisco"},
-{"username": "admin",
-"password": ""}
+{"sw2_username": "cisco",
+"sw2_password": "cisco"},
+{"router_username": "admin",
+"router_password": "admin"}
 ]

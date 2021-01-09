@@ -19,13 +19,18 @@ login_file_dic = ast.literal_eval(login_file_reader)
 #commands_file_dic = ast.literal_eval(commands_file_reader)
 
 
-print(type(device_list_dic))
-print(device_list_dic)
-print(device_list_dic[0]["ip_address"])
-
 sw1_ipaddress = device_list_dic[0]["ip_address"]
 sw1_username = login_file_dic[0]["sw1_username"]
 sw1_password = login_file_dic[0]["sw1_password"]
+
+sw2_ipaddress = device_list_dic[1]["ip_address"]
+sw2_username = login_file_dic[1]["sw2_username"]
+sw2_password = login_file_dic[1]["sw2_password"]
+
+router_ipaddress = device_list_dic[2]["ip_address"]
+router_username = login_file_dic[2]["router_username"]
+router_password = login_file_dic[2]["router_password"]
+
 switch_1 = {
     "device_type": "cisco_ios",
     "host": sw1_ipaddress,
@@ -35,21 +40,24 @@ switch_1 = {
 
 switch_2 = {
     "device_type": "cisco_ios",
-    "host": "172.16.1.2",
-    "username": "webmaster",
-    "password": "webmaster",
+    "host": sw2_ipaddress,
+    "username": sw2_username,
+    "password": sw2_password,
 }
 
 mikrotik = {
-    "device_type": "mikrotik",
-    "host": "172.16.0.1",
-    "username": "admin",
-    "password": "admin",
+    "device_type": "mikrotik_routeros",
+    "host": router_ipaddress,
+    "username": router_username,
+    "password": router_password,
 }
 
-command = "show arp"
-net_connect = ConnectHandler(**switch_1)
-output = net_connect.send_command(command)
-net_connect.disconnect()
-print(f"\n{output}\n")
+# Test reachability
+
+def send_commands(device, command):
+    # Send commands for switch 1
+    net_connect = ConnectHandler(**device)
+    output = net_connect.send_command(command)
+    net_connect.disconnect()
+    print(f"\n{output}\n")
 

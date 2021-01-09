@@ -3,7 +3,7 @@
 {"device_name": "switch2",
 "ip_address": "172.17.1.2"},
 {"device_name": "MikroTik-1",
-"ip_address": "172.16.0.2"}]
+"ip_address": "172.16.0.1"}]
 
 
 
