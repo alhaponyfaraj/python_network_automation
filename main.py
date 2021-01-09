@@ -1,5 +1,5 @@
 import connection as conn
-import cpu_utilizer
+import cpu_utilizer as cpu_util
 import packet_sniffer
 import reachability_check
 
@@ -34,7 +34,7 @@ def start():
                 else:
                     print("Can not reach the host: " + ipaddress)
         elif choice == "2":
-
+            cpu_util.main()
         elif choice == "3":
             packet_sniffer.sniff(prn=packet_sniffer.arp_display, filter="arp", store=0, count=10)
         else:

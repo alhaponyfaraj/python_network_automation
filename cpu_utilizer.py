@@ -35,17 +35,21 @@ def send_commands(device, command):
 
 
         return digits[0]
-while True:
-    cpu_load = send_commands(switch_1, "show processes cpu sorted")
-    print(cpu_load)
-    fig = plt.figure()
-    ax1 = fig.add_subplot(1, 1, 1)
-    time_now = time.time()
-    x = []
-    y = []
-    x.append(float(cpu_load))
-    y.append(float(time_now))
-    ax1.clear()
-    ax1.plot(x, y)
-    plt.show()
+def main():
+    while True:
+        cpu_load = send_commands(switch_1, "show processes cpu sorted")
+        print(cpu_load)
+        fig = plt.figure()
+        ax1 = fig.add_subplot(1, 1, 1)
+        time_now = time.time()
+        x = []
+        y = []
+        x.append(float(cpu_load))
+        y.append(float(time_now))
+        ax1.clear()
+        ax1.plot(x, y)
+        plt.show()
 
+
+if __name__ == "__main__":
+    main()
