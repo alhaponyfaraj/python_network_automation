@@ -13,8 +13,11 @@ def start():
 
         2. CPU utilization.
         _____________________________________________________
+        
+        3. Scapy sniffing .
+        _____________________________________________________
 
-        3. Exit .
+        4. Exit .
         _____________________________________________________
 
          Your Choice: ''')
@@ -30,6 +33,7 @@ def start():
                     print("The host: " + ipaddress +" is up.")
                 else:
                     print("Can not reach the host: " + ipaddress)
+        elif choice == "2":
 
         elif choice == "3":
             packet_sniffer.sniff(prn=packet_sniffer.arp_display, filter="arp", store=0, count=10)

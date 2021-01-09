@@ -41,11 +41,11 @@ while True:
     fig = plt.figure()
     ax1 = fig.add_subplot(1, 1, 1)
     time_now = time.time()
-    xs = []
-    ys = []
-    xs.append(float(cpu_load))
-    ys.append(float(time_now))
+    x = []
+    y = []
+    x.append(float(cpu_load))
+    y.append(float(time_now))
     ax1.clear()
-    ax1.plot(xs, ys)
+    ax1.plot(x, y)
     plt.show()
 

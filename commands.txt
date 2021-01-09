@@ -1,0 +1,4 @@
+[
+{"show_arp": "show arp",
+"show_run_conf": "show running config"}
+]

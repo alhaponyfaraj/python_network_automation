@@ -16,7 +16,7 @@ commands_file_reader = commands_file.read()
 # convert string to list
 device_list_dic = ast.literal_eval(device_list_reader)
 login_file_dic = ast.literal_eval(login_file_reader)
-#commands_file_dic = ast.literal_eval(commands_file_reader)
+commands_file_dic = ast.literal_eval(commands_file_reader)
 
 
 sw1_ipaddress = device_list_dic[0]["ip_address"]
